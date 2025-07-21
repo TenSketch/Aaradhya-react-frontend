@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => (
@@ -7,10 +8,11 @@ const Footer = () => (
       <div className="col1">
         <h5 className="text-xl font-bold mb-2">Pages</h5>
         <ul>
-          <li><a href="#" className="hover:text-gold">Home</a></li>
-          <li><a href="#memorial" className="hover:text-gold">SPB Memorial</a></li>
-          {/* <li><a href="#" className="hover:text-gold">Board Members</a></li> */}
-          <li><a href="#gallery" className="hover:text-gold">Gallery</a></li>
+          <li><NavLink to="/" className={({ isActive }) => isActive ? 'hover:text-gold font-bold' : 'hover:text-gold'}>Home</NavLink></li>
+          <li><NavLink to="/memorial" className={({ isActive }) => isActive ? 'hover:text-gold font-bold' : 'hover:text-gold'}>SPB Memorial</NavLink></li>
+          {/* <li><NavLink to="/board-members" className={({ isActive }) => isActive ? 'hover:text-gold font-bold' : 'hover:text-gold'}>Board Members</NavLink></li> */}
+          <li><NavLink to="/gallery" className={({ isActive }) => isActive ? 'hover:text-gold font-bold' : 'hover:text-gold'}>Gallery</NavLink></li>
+          <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'hover:text-gold font-bold' : 'hover:text-gold'}>Contact Us</NavLink></li>
           <li><a href="#donate" className="hover:text-gold">Donate</a></li>
         </ul>
       </div>
