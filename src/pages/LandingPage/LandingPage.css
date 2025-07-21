@@ -1,0 +1,19 @@
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f5f6fa;
+  color: #222;
+}
+
+.landing-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.landing-page p {
+  font-size: 1.2rem;
+  color: #555;
+}
