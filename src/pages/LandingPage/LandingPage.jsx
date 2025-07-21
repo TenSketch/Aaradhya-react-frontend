@@ -1,11 +1,31 @@
-
-
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import './LandingPage.css';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 
+
 const LandingPage = () => {
+  // Fade-in animation for Vision section
+  const visionRef = useRef(null);
+  const [isVisionVisible, setIsVisionVisible] = useState(false);
+
+  useEffect(() => {
+    const node = visionRef.current;
+    if (!node) return;
+    const observer = new window.IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          setIsVisionVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
 
     <div className="landing-page">
@@ -40,8 +60,14 @@ const LandingPage = () => {
         </section>
 
         {/* Vision Section */}
-        <section id="vision" className="w-[calc(100%-88px)] mx-auto rounded-2xl shadow-lg relative px-4 py-10 md:py-16 overflow-hidden">
-          <div className="space-y-8 text-white">
+        <section
+          id="vision"
+          className="w-[calc(100%-88px)] mx-auto rounded-2xl shadow-lg relative px-4 py-10 md:py-16 overflow-hidden"
+        >
+          <div
+            ref={visionRef}
+            className={`space-y-8 text-white fade-in-section${isVisionVisible ? ' is-visible' : ''}`}
+          >
             <h2 className="vision-title text-3xl md:text-4xl font-bold">The Vision</h2>
             <p className="vision-paragraph text-base md:text-lg leading-relaxed">
               The word <span className="highlight">Aaradhya <i className="fas fa-heart text-accent-clr"></i></span> means “worshipped”. It is a Sanskrit term inferring the blessing of Lord Ganesh. <span className="highlight">Aaradhya</span> is a foundation started by family members of the late <span className="highlight">Shri S.P. Balasubrahmanyam <i className="fas fa-music text-accent-clr"></i></span> to remember, commemorate and celebrate the legendary singer’s life and legacy. The core of <span className="highlight">Aaradhya</span> dwells upon this foundation.
