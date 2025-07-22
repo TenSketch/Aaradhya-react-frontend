@@ -31,18 +31,6 @@ const AdminNavbar = () => {
             </div>
           </div>
         </div>
-        
-        {/* Center - Search */}
-        <div className="hidden lg:flex flex-1 max-w-md mx-8">
-          <div className="relative w-full">
-            <input 
-              type="text" 
-              placeholder="Search..." 
-              className="w-full bg-blue-800 text-white placeholder-blue-300 border border-blue-700 rounded-full px-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
-            />
-            <i className="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-300"></i>
-          </div>
-        </div>
 
         {/* Right side */}
         <div className="flex items-center space-x-4">

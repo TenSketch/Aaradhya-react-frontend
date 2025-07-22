@@ -14,33 +14,14 @@ const AdminSidebar = ({ activeTab, setActiveTab }) => {
       id: 'donations',
       icon: 'fas fa-hand-holding-heart',
       label: 'Donations',
-      badge: '12'
-    },
-    {
-      id: 'donors',
-      icon: 'fas fa-users',
-      label: 'Donors',
       badge: null
     },
     {
       id: 'contact',
       icon: 'fas fa-envelope-open',
       label: 'Contact Forms',
-      badge: '5'
-    },
-    {
-      id: 'gallery',
-      icon: 'fas fa-images',
-      label: 'Gallery',
       badge: null
     },
-    {
-      id: 'reports',
-      icon: 'fas fa-chart-bar',
-      label: 'Reports',
-      badge: null
-    },
-    // Removed 'Settings' (profile/account setting) from sidebar menu
   ];
 
   return (
