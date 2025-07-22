@@ -6,16 +6,16 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 const galleryImages = [
-  '/src/assets/images/gallery/SPB_Museum-photos-1.jpg',
-  '/src/assets/images/gallery/SPB_Museum-photos-2.jpg',
-  '/src/assets/images/gallery/SPB_Museum-photos-3.jpg',
-  '/src/assets/images/gallery/SPB_Museum-photos-4.jpg',
-  '/src/assets/images/gallery/SPB_Museum-photos-5.jpg',
-  '/src/assets/images/gallery/SPB_Museum-photos-6.jpg',
-  '/src/assets/images/gallery/SPB_Museum-photos-7.jpg',
-  '/src/assets/images/gallery/SPB_Museum-photos-8.jpg',
-  '/src/assets/images/gallery/SPB_Museum-photos-9.jpg',
-  '/src/assets/images/gallery/SPB_Museum-photos-10.jpg',
+  '/assets/images/gallery/SPB_Museum-photos-1.jpg',
+  '/assets/images/gallery/SPB_Museum-photos-2.jpg',
+  '/assets/images/gallery/SPB_Museum-photos-3.jpg',
+  '/assets/images/gallery/SPB_Museum-photos-4.jpg',
+  '/assets/images/gallery/SPB_Museum-photos-5.jpg',
+  '/assets/images/gallery/SPB_Museum-photos-6.jpg',
+  '/assets/images/gallery/SPB_Museum-photos-7.jpg',
+  '/assets/images/gallery/SPB_Museum-photos-8.jpg',
+  '/assets/images/gallery/SPB_Museum-photos-9.jpg',
+  '/assets/images/gallery/SPB_Museum-photos-10.jpg',
 ];
 
 

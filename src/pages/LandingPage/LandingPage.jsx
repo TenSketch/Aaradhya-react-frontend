@@ -40,7 +40,7 @@ const LandingPage = () => {
             {/* Image with 3D frame */}
             <div className="relative w-full max-w-xs md:max-w-sm lg:max-w-md">
               <div className="absolute -inset-3 rotate-[8deg] rounded-2xl bg-accent-clr shadow-xl z-0"></div>
-              <img src="/src/assets/images/SPB-Photos/SPB-Photo-4.jpg" alt="SP Balasubrahmanyam" className="relative z-10 rounded-2xl shadow-lg" />
+              <img src="/assets/images/SPB-Photos/SPB-Photo-4.jpg" alt="SP Balasubrahmanyam" className="relative z-10 rounded-2xl shadow-lg" />
             </div>
             {/* Text Content */}
             <div className="text-center md:text-left space-y-4">

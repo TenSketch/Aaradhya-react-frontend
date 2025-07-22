@@ -34,7 +34,7 @@ const Contact = () => {
             <div className="grid md:grid-cols-2 gap-10 items-center">
               {/* Image */}
               <div className="text-center">
-                <img src={"/src/assets/images/gallery/SPB_Museum-photos-4.jpg"} alt="Contact Us" className="mx-auto max-w-full rounded-md shadow-md" />
+                <img src={"/assets/images/gallery/SPB_Museum-photos-4.jpg"} alt="Contact Us" className="mx-auto max-w-full rounded-md shadow-md" />
               </div>
               {/* Form */}
               <div>

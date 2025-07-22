@@ -5,11 +5,11 @@ import "./SPBMemorial.css";
 
 
 const designImages = [
-  '/src/assets/images/design-plan/Amphitheatre.jpg',
-  '/src/assets/images/design-plan/Virtual_View-Day.jpg',
-  '/src/assets/images/design-plan/Virtual_View-Night.jpg',
-  '/src/assets/images/design-plan/Virtual_View-Night-1.jpg',
-  '/src/assets/images/design-plan/Walk_way.jpg',
+  '/assets/images/design-plan/Amphitheatre.jpg',
+  '/assets/images/design-plan/Virtual_View-Day.jpg',
+  '/assets/images/design-plan/Virtual_View-Night.jpg',
+  '/assets/images/design-plan/Virtual_View-Night-1.jpg',
+  '/assets/images/design-plan/Walk_way.jpg',
 ];
 
 const SPBMemorial = () => {
@@ -24,9 +24,9 @@ const SPBMemorial = () => {
             muted
             loop
             className="absolute w-full h-full object-cover"
-            poster={"/src/assets/images/gallery/SPB_Museum-photos-9.jpg"}
+            poster={"/assets/images/gallery/SPB_Museum-photos-9.jpg"}
           >
-            <source src={"/src/assets/videos/SPB_Museum-completion-render-animation.mp4"} type="video/mp4" />
+            <source src={"/assets/videos/SPB_Museum-completion-render-animation.mp4"} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="relative z-10 flex items-center justify-center h-full bg-black bg-opacity-50">
