@@ -4,6 +4,15 @@ const logo = "/assets/images/logo-Aaradhya_trust.png";
 const AdminNavbar = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
+  // Sign out handler: clear session and redirect to login
+  const handleSignOut = () => {
+    // Example: clear localStorage/sessionStorage if used for auth
+    localStorage.clear();
+    sessionStorage.clear();
+    // Redirect to login page
+    window.location.href = '/admin';
+  };
+
   return (
     <nav className="navbar fixed top-0 left-0 right-0 bg-gradient-to-r from-blue-900 to-blue-800 shadow-xl z-50 h-16">
       <div className="flex items-center justify-between px-6 h-full">
@@ -56,19 +65,14 @@ const AdminNavbar = () => {
                   <p className="text-sm font-medium text-gray-900">Administrator</p>
                   <p className="text-sm text-gray-500">admin@aaradhya.org</p>
                 </div>
-                <a href="#" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors">
-                  <i className="fas fa-user-cog mr-3 text-blue-600"></i>
-                  Profile Settings
-                </a>
-                <a href="#" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors">
-                  <i className="fas fa-cog mr-3 text-blue-600"></i>
-                  Account Settings
-                </a>
                 <div className="border-t border-gray-100 mt-1 pt-1">
-                  <a href="#" className="flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors">
+                  <button
+                    onClick={handleSignOut}
+                    className="w-full text-left flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
+                  >
                     <i className="fas fa-sign-out-alt mr-3"></i>
                     Sign Out
-                  </a>
+                  </button>
                 </div>
               </div>
             )}

@@ -41,12 +41,7 @@ const AdminSidebar = () => {
       label: 'Reports',
       badge: null
     },
-    {
-      id: 'settings',
-      icon: 'fas fa-cog',
-      label: 'Settings',
-      badge: null
-    }
+    // Removed 'Settings' (profile/account setting) from sidebar menu
   ];
 
   return (
