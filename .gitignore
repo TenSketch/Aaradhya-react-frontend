@@ -1,3 +1,5 @@
+# Ignore Aaradhya Trust admin folder
+Aaradhya_Trust/admin/
 
 # Logs
 logs/

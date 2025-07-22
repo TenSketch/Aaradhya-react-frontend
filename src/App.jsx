@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage/LandingPage';
+import AdminLogin from './pages/AdminLogin/AdminLogin';
 import SPBMemorial from './pages/SPBMemorial/SPBMemorial';
 import Gallery from './pages/Gallery/Gallery';
 import Contact from './pages/Contact/Contact';
@@ -14,6 +15,7 @@ function App() {
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/donate" element={<Donate />} />
+      <Route path="/admin" element={<AdminLogin />} />
     </Routes>
   );
 }
