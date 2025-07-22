@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-const AdminSidebar = () => {
-  const [activeItem, setActiveItem] = useState('dashboard');
+const AdminSidebar = ({ activeTab, setActiveTab }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false); // For mobile collapse
 
   const menuItems = [
@@ -87,16 +86,16 @@ const AdminSidebar = () => {
               <a
                 key={item.id}
                 href="#"
-                onClick={() => setActiveItem(item.id)}
+                onClick={() => setActiveTab(item.id)}
                 className={`nav-item group flex items-center justify-between p-3 rounded-xl transition-all duration-200 ${
-                  activeItem === item.id
+                  activeTab === item.id
                     ? 'bg-yellow-400 text-blue-900 shadow-lg transform scale-105'
                     : 'hover:bg-blue-700 hover:transform hover:translate-x-2'
                 }`}
               >
                 <div className="flex items-center space-x-3">
                   <div className={`p-2 rounded-lg ${
-                    activeItem === item.id ? 'bg-blue-900 text-yellow-400' : 'bg-blue-800 group-hover:bg-blue-600'
+                    activeTab === item.id ? 'bg-blue-900 text-yellow-400' : 'bg-blue-800 group-hover:bg-blue-600'
                   }`}>
                     <i className={`${item.icon} text-sm`}></i>
                   </div>
@@ -104,7 +103,7 @@ const AdminSidebar = () => {
                 </div>
                 {item.badge && (
                   <span className={`px-2 py-1 text-xs rounded-full font-bold ${
-                    activeItem === item.id 
+                    activeTab === item.id 
                       ? 'bg-blue-900 text-yellow-400' 
                       : 'bg-red-500 text-white'
                   }`}>
