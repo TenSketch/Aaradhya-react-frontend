@@ -1,34 +1,82 @@
-import React from "react";
+import React, { useState } from "react";
 const logo = "/assets/images/logo-Aaradhya_trust.png";
 
-const AdminNavbar = () => (
-  <nav className="navbar fixed top-0 left-0 right-0 bg-white shadow-lg z-50 h-16">
-    <div className="flex items-center justify-between px-4 h-full">
-      {/* Left side */}
-      <div className="flex items-center space-x-4">
-        <button id="sidebar-toggle" className="lg:hidden text-blue-900 hover:text-blue-700">
-          <i className="fas fa-bars text-xl"></i>
-        </button>
-        <div className="flex items-center space-x-3">
-          <img src={logo} alt="Aaradhya Trust Logo" className="h-10 w-10" />
-          <span className="text-xl font-bold text-blue-900">Aaradhya Trust Admin</span>
-        </div>
-      </div>
-      {/* Right side */}
-      <div className="flex items-center space-x-4">
-        <div className="relative">
-          <button id="profile-btn" className="text-gray-600 hover:text-blue-900">
-            <i className="fas fa-user-circle text-xl"></i>
+const AdminNavbar = () => {
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+
+  return (
+    <nav className="navbar fixed top-0 left-0 right-0 bg-gradient-to-r from-blue-900 to-blue-800 shadow-xl z-50 h-16">
+      <div className="flex items-center justify-between px-6 h-full">
+        {/* Left side */}
+        <div className="flex items-center space-x-4">
+          <button id="sidebar-toggle" className="lg:hidden text-white hover:text-yellow-300 transition-colors duration-200">
+            <i className="fas fa-bars text-xl"></i>
           </button>
-          {/* Profile dropdown (hidden by default) */}
-          <div id="profile-dropdown" className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 hidden">
-            <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
-            <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+          <div className="flex items-center space-x-4">
+            <div className="bg-white rounded-full p-2 shadow-lg">
+              <img src={logo} alt="Aaradhya Trust Logo" className="h-8 w-8" />
+            </div>
+            <div className="hidden md:block">
+              <h1 className="text-xl font-bold text-white">Aaradhya Trust</h1>
+              <p className="text-xs text-yellow-300">Admin Dashboard</p>
+            </div>
+          </div>
+        </div>
+        
+        {/* Center - Search */}
+        <div className="hidden lg:flex flex-1 max-w-md mx-8">
+          <div className="relative w-full">
+            <input 
+              type="text" 
+              placeholder="Search..." 
+              className="w-full bg-blue-800 text-white placeholder-blue-300 border border-blue-700 rounded-full px-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+            />
+            <i className="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-300"></i>
+          </div>
+        </div>
+
+        {/* Right side */}
+        <div className="flex items-center space-x-4">
+          {/* Profile dropdown */}
+          <div className="relative">
+            <button 
+              onClick={() => setIsProfileOpen(!isProfileOpen)}
+              className="flex items-center space-x-2 text-white hover:text-yellow-300 transition-colors duration-200 bg-blue-800 rounded-full px-3 py-2"
+            >
+              <div className="bg-yellow-400 rounded-full p-1">
+                <i className="fas fa-user text-blue-900 text-sm"></i>
+              </div>
+              <span className="hidden md:block text-sm font-medium">Admin</span>
+              <i className="fas fa-chevron-down text-xs"></i>
+            </button>
+            
+            {isProfileOpen && (
+              <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-100">
+                <div className="px-4 py-3 border-b border-gray-100">
+                  <p className="text-sm font-medium text-gray-900">Administrator</p>
+                  <p className="text-sm text-gray-500">admin@aaradhya.org</p>
+                </div>
+                <a href="#" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors">
+                  <i className="fas fa-user-cog mr-3 text-blue-600"></i>
+                  Profile Settings
+                </a>
+                <a href="#" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors">
+                  <i className="fas fa-cog mr-3 text-blue-600"></i>
+                  Account Settings
+                </a>
+                <div className="border-t border-gray-100 mt-1 pt-1">
+                  <a href="#" className="flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors">
+                    <i className="fas fa-sign-out-alt mr-3"></i>
+                    Sign Out
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
-    </div>
-  </nav>
-);
+    </nav>
+  );
+};
 
 export default AdminNavbar;

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const logo = "/assets/images/logo-Aaradhya_trust.png";
@@ -7,6 +8,7 @@ import "./AdminLogin.css";
 const AdminLogin = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,14 +30,18 @@ const AdminLogin = () => {
           setError("");
           toast.success("Sign-in successful!", {
             position: "top-right",
-            autoClose: 3000,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
           });
-          // window.location.href = "/admin/dashboard"; // Example redirect
+          // Save token to localStorage
+          localStorage.setItem("admin_token", data.token);
+          setTimeout(() => {
+            navigate("/admin/dashboard");
+          }, 2200);
         } else {
           setError(data.message || "Invalid credentials. Please try again.");
         }
