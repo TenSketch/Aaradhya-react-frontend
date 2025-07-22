@@ -64,7 +64,7 @@
 /* The Vision Section Styles */
 /* The Vision Section */
 #vision {
-  background: hsl(128, 70%, 21%) url(/src/assets/images/gallery/SPB_Museum-photos-9.jpg) no-repeat center/cover fixed;
+  background: hsl(128, 70%, 21%) url(/assets/images/gallery/SPB_Museum-photos-9.jpg) no-repeat center/cover fixed;
   background-blend-mode: overlay;
 }
 #vision .vision-title {

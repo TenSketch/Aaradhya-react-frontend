@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="navbar fixed top-0 z-50 transition-all mx-auto px-5 py-3 flex items-center justify-between">
       <div className="navbar-brand flex-auto">
-        <img src="/assets/logo-Aaradhya_trust.png" className="logo" alt="logo-Aaradhya_trust" />
+        <img src="/assets/images/logo-Aaradhya_trust.png" className="logo" alt="logo-Aaradhya_trust" />
       </div>
       <ul
         id="menu"
