@@ -32,9 +32,69 @@ const Donate = () => {
   };
   const [showThankYou, setShowThankYou] = useState(false);
 
-  const handleSubmit = (e) => {
+  // Razorpay script loader
+  const loadRazorpayScript = () => {
+    return new Promise((resolve) => {
+      if (document.getElementById('razorpay-script')) {
+        resolve(true);
+        return;
+      }
+      const script = document.createElement('script');
+      script.id = 'razorpay-script';
+      script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+      script.onload = () => {
+        resolve(true);
+      };
+      script.onerror = () => {
+        resolve(false);
+      };
+      document.body.appendChild(script);
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setShowThankYou(true);
+    const form = e.target;
+    const donor_name = form.donor_name.value;
+    const donor_mobile = form.donor_mobile.value;
+    const donor_email = form.donor_email.value;
+    const donor_aadhar = form.donor_aadhar.value;
+    const pan = `${panAlpha}${panNum}${panLast}`;
+    const donation_amount = form.donation_amount.value;
+    const donor_message = form.donor_message.value;
+
+    const res = await loadRazorpayScript();
+    if (!res) {
+      alert('Razorpay SDK failed to load. Are you online?');
+      return;
+    }
+
+    const options = {
+      key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+      amount: Number(donation_amount) * 100, // in paise
+      currency: 'INR',
+      name: 'Aaradhya Trust',
+      description: 'Donation',
+      image: '/assets/images/logo-Aaradhya_trust.png',
+      handler: function (response) {
+        setShowThankYou(true);
+      },
+      prefill: {
+        name: donor_name,
+        email: donor_email,
+        contact: donor_mobile,
+      },
+      notes: {
+        aadhar: donor_aadhar,
+        pan: pan,
+        message: donor_message,
+      },
+      theme: {
+        color: '#14532d',
+      },
+    };
+    const rzp = new window.Razorpay(options);
+    rzp.open();
   };
 
   return (
